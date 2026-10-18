@@ -35,11 +35,15 @@ export const metadata: Metadata = {
     'rental mobil dengan sopir cianjur',
   ],
   authors: [{ name: BUSINESS_CONFIG.name }],
-  metadataBase: new URL('https://vviprentcar.com'),
+  metadataBase: new URL('https://vviprentcarcianjur.com'),
+  alternates: {
+    canonical: '/',
+  },
   openGraph: {
     title: `${BUSINESS_CONFIG.name} — Rental Mobil Terpercaya di Cianjur`,
     description:
       'Solusi transportasi terpercaya di Cianjur dengan pilihan sewa mobil dengan sopir atau lepas kunci. Hubungi kami langsung via WhatsApp untuk reservasi.',
+    url: 'https://vviprentcarcianjur.com',
     locale: 'id_ID',
     type: 'website',
     siteName: BUSINESS_CONFIG.name,

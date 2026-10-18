@@ -18,6 +18,7 @@ import { BusinessConfig } from '@/types';
 export const BUSINESS_CONFIG: BusinessConfig = {
   name: 'VVIP Rent Car',
   shortName: 'VVIP Rent Car',
+  url: 'https://vviprentcarcianjur.com',
   tagline: 'Rental Mobil Terpercaya di Cianjur',
   description:
     'Layanan rental mobil dengan sopir dan lepas kunci di Cianjur. Menyediakan contoh armada yang bersih dan nyaman untuk kebutuhan perjalanan pribadi, dinas kerja, dan keluarga dengan pemesanan cepat via WhatsApp.',

@@ -68,6 +68,7 @@ export interface BusinessConfig {
   description: string;
   whatsappNumber: string; // Format internasional tanpa +, contoh: 6281902433126
   displayPhone: string;
+  url?: string;
   email?: string;
   address?: string;
   city?: string;

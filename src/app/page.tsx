@@ -14,8 +14,30 @@ import { ConfigNoticeBanner } from '@/components/ui/gold-ornament';
 import { BUSINESS_CONFIG } from '@/lib/config';
 
 export default function Home() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'AutoRental',
+    name: BUSINESS_CONFIG.name,
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: BUSINESS_CONFIG.address,
+      addressLocality: BUSINESS_CONFIG.city,
+    },
+    telephone: BUSINESS_CONFIG.displayPhone,
+    url: BUSINESS_CONFIG.url,
+    sameAs: BUSINESS_CONFIG.socials.instagram ? [BUSINESS_CONFIG.socials.instagram] : undefined,
+  };
+
   return (
     <div className="flex flex-col min-h-screen bg-[#0d0d0d] text-stone-100 selection:bg-[#D4AF37] selection:text-black">
+      {/* Structured Data (Schema.org JSON-LD) */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, '\\u003c'),
+        }}
+      />
+
       {/* Configuration Status Notice (Shown during development / client preview) */}
       {BUSINESS_CONFIG.isConfigurationPlaceholder && (
         <ConfigNoticeBanner
