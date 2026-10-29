@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { MessageSquare, X } from 'lucide-react';
 import { getGeneralInquiryWhatsAppUrl } from '@/lib/whatsapp';
+import { trackWhatsAppConversion } from '@/lib/google-ads';
 
 export function FloatingWhatsApp() {
   const [showTooltip, setShowTooltip] = useState(true);
@@ -13,7 +14,6 @@ export function FloatingWhatsApp() {
       aria-label="Kontak Cepat WhatsApp"
       className="fixed bottom-6 right-6 z-40 flex flex-col items-end pointer-events-auto"
     >
-      {/* Tooltip dialog */}
       {showTooltip && (
         <div className="relative mb-3 mr-1 bg-[#1a1813] text-[#FAF7F0] border border-[#D4AF37]/50 rounded-xl p-3.5 shadow-2xl max-w-xs animate-fade-in text-xs backdrop-blur-md">
           <button
@@ -34,11 +34,11 @@ export function FloatingWhatsApp() {
         </div>
       )}
 
-      {/* Main floating button */}
       <a
         href={waUrl}
         target="_blank"
         rel="noopener noreferrer"
+        onClick={trackWhatsAppConversion}
         aria-label="Konsultasi cepat via WhatsApp"
         className="group relative flex items-center justify-center w-14 h-14 rounded-full bg-gradient-to-tr from-[#111111] via-[#1a1a1a] to-[#252525] border-2 border-[#D4AF37] text-[#F2D98D] shadow-[0_0_20px_rgba(212,175,55,0.35)] hover:shadow-[0_0_30px_rgba(212,175,55,0.6)] hover:border-[#F2D98D] hover:scale-105 active:scale-95 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#D4AF37] focus:ring-offset-2 focus:ring-offset-black"
       >
