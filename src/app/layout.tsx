@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import Script from 'next/script';
 import { Playfair_Display, Plus_Jakarta_Sans } from 'next/font/google';
 import './globals.css';
 import { BUSINESS_CONFIG } from '@/lib/config';
@@ -62,6 +63,17 @@ export default function RootLayout({
   return (
     <html lang="id" className={`${playfair.variable} ${plusJakarta.variable}`}>
       <body className="min-h-screen flex flex-col bg-[#0d0d0d] text-stone-100 antialiased selection:bg-[#D4AF37] selection:text-black">
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=AW-18526860834"
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-tag" strategy="afterInteractive">
+          {`window.dataLayer = window.dataLayer || [];
+            function gtag(){window.dataLayer.push(arguments);}
+            window.gtag = gtag;
+            gtag('js', new Date());
+            gtag('config', 'AW-18526860834');`}
+        </Script>
         {children}
       </body>
     </html>
