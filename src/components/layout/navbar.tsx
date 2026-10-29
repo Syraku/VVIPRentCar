@@ -6,6 +6,7 @@ import { BUSINESS_CONFIG, NAV_LINKS } from '@/lib/config';
 import { getGeneralInquiryWhatsAppUrl } from '@/lib/whatsapp';
 import { WhatsAppButton } from '../ui/whatsapp-button';
 import { Logo } from '../ui/logo';
+import { trackWhatsAppConversion } from '@/lib/google-ads';
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -82,6 +83,7 @@ export function Navbar() {
               href={generalWhatsAppUrl}
               target="_blank"
               rel="noopener noreferrer"
+              onClick={trackWhatsAppConversion}
               aria-label="Kontak WhatsApp Cepat"
               className="p-2 rounded-full bg-[#D4AF37]/10 text-[#F2D98D] border border-[#D4AF37]/30"
             >
